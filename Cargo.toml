@@ -1,0 +1,21 @@
+[package]
+name = "logngine"
+version = "0.1.0"
+edition = "2021"
+authors = ["Logan Dapp <logandapp@gmail.com>"]
+license = "MIT"
+description = "Package designed for my specific engineering numerical method needs."
+
+
+[dependencies]
+ndarray = "0.15"
+rayon = { version = "1.5", optional = true }
+pyo3 = { version = "0.20", features = ["extension-module"] }
+
+[features]
+default = []
+python = ["pyo3"]
+simd = ["packed_simd_2"]
+
+[dev-dependencies]
+criterion = "0.3"
